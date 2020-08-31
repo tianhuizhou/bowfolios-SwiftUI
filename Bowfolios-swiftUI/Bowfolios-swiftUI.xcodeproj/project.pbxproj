@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C53B267B24FD1682004184B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267A24FD1682004184B9 /* AppDelegate.swift */; };
+		C53B267D24FD1682004184B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267C24FD1682004184B9 /* SceneDelegate.swift */; };
+		C53B267F24FD1682004184B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267E24FD1682004184B9 /* ContentView.swift */; };
+		C53B268124FD1685004184B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53B268024FD1685004184B9 /* Assets.xcassets */; };
+		C53B268424FD1685004184B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53B268324FD1685004184B9 /* Preview Assets.xcassets */; };
+		C53B268724FD1685004184B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53B268524FD1685004184B9 /* LaunchScreen.storyboard */; };
+		C53B268F24FD17C9004184B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C53B268E24FD17C9004184B9 /* GoogleService-Info.plist */; };
+		CFA7C6C5910522885E158AA1 /* Pods_Bowfolios_swiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E03E27D689BC58F0AACD26 /* Pods_Bowfolios_swiftUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		952D9BF81DF6665EAF5671C1 /* Pods-Bowfolios-swiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowfolios-swiftUI.release.xcconfig"; path = "Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		C53B267724FD1682004184B9 /* Bowfolios-swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowfolios-swiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C53B267A24FD1682004184B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C53B267C24FD1682004184B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C53B267E24FD1682004184B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C53B268024FD1685004184B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C53B268324FD1685004184B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C53B268624FD1685004184B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C53B268824FD1685004184B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C53B268E24FD17C9004184B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D6E03E27D689BC58F0AACD26 /* Pods_Bowfolios_swiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bowfolios_swiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D86839DCBA49AA04348BF80B /* Pods-Bowfolios-swiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowfolios-swiftUI.debug.xcconfig"; path = "Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C53B267424FD1682004184B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFA7C6C5910522885E158AA1 /* Pods_Bowfolios_swiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		423FB9275D4909EADFAD21A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6E03E27D689BC58F0AACD26 /* Pods_Bowfolios_swiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54794BDFE911E7419B166030 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D86839DCBA49AA04348BF80B /* Pods-Bowfolios-swiftUI.debug.xcconfig */,
+				952D9BF81DF6665EAF5671C1 /* Pods-Bowfolios-swiftUI.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C53B266E24FD1682004184B9 = {
+			isa = PBXGroup;
+			children = (
+				C53B267924FD1682004184B9 /* Bowfolios-swiftUI */,
+				C53B267824FD1682004184B9 /* Products */,
+				54794BDFE911E7419B166030 /* Pods */,
+				423FB9275D4909EADFAD21A1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C53B267824FD1682004184B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C53B267724FD1682004184B9 /* Bowfolios-swiftUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C53B267924FD1682004184B9 /* Bowfolios-swiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C53B267A24FD1682004184B9 /* AppDelegate.swift */,
+				C53B267C24FD1682004184B9 /* SceneDelegate.swift */,
+				C53B267E24FD1682004184B9 /* ContentView.swift */,
+				C53B268024FD1685004184B9 /* Assets.xcassets */,
+				C53B268524FD1685004184B9 /* LaunchScreen.storyboard */,
+				C53B268E24FD17C9004184B9 /* GoogleService-Info.plist */,
+				C53B268824FD1685004184B9 /* Info.plist */,
+				C53B268224FD1685004184B9 /* Preview Content */,
+			);
+			path = "Bowfolios-swiftUI";
+			sourceTree = "<group>";
+		};
+		C53B268224FD1685004184B9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C53B268324FD1685004184B9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C53B267624FD1682004184B9 /* Bowfolios-swiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C53B268B24FD1685004184B9 /* Build configuration list for PBXNativeTarget "Bowfolios-swiftUI" */;
+			buildPhases = (
+				3392E4202520787D10CDD297 /* [CP] Check Pods Manifest.lock */,
+				C53B267324FD1682004184B9 /* Sources */,
+				C53B267424FD1682004184B9 /* Frameworks */,
+				C53B267524FD1682004184B9 /* Resources */,
+				393BE1B7782E622127D37871 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bowfolios-swiftUI";
+			productName = "Bowfolios-swiftUI";
+			productReference = C53B267724FD1682004184B9 /* Bowfolios-swiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C53B266F24FD1682004184B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Tianhui Zhou";
+				TargetAttributes = {
+					C53B267624FD1682004184B9 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = C53B267224FD1682004184B9 /* Build configuration list for PBXProject "Bowfolios-swiftUI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C53B266E24FD1682004184B9;
+			productRefGroup = C53B267824FD1682004184B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C53B267624FD1682004184B9 /* Bowfolios-swiftUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C53B267524FD1682004184B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C53B268724FD1685004184B9 /* LaunchScreen.storyboard in Resources */,
+				C53B268F24FD17C9004184B9 /* GoogleService-Info.plist in Resources */,
+				C53B268424FD1685004184B9 /* Preview Assets.xcassets in Resources */,
+				C53B268124FD1685004184B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3392E4202520787D10CDD297 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bowfolios-swiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		393BE1B7782E622127D37871 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C53B267324FD1682004184B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C53B267B24FD1682004184B9 /* AppDelegate.swift in Sources */,
+				C53B267D24FD1682004184B9 /* SceneDelegate.swift in Sources */,
+				C53B267F24FD1682004184B9 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C53B268524FD1685004184B9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C53B268624FD1685004184B9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C53B268924FD1685004184B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C53B268A24FD1685004184B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C53B268C24FD1685004184B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D86839DCBA49AA04348BF80B /* Pods-Bowfolios-swiftUI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bowfolios-swiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = K437L26D6M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bowfolios-swiftUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bobbyz.Bowfolios-swiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C53B268D24FD1685004184B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 952D9BF81DF6665EAF5671C1 /* Pods-Bowfolios-swiftUI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bowfolios-swiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = K437L26D6M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bowfolios-swiftUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bobbyz.Bowfolios-swiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C53B267224FD1682004184B9 /* Build configuration list for PBXProject "Bowfolios-swiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C53B268924FD1685004184B9 /* Debug */,
+				C53B268A24FD1685004184B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C53B268B24FD1685004184B9 /* Build configuration list for PBXNativeTarget "Bowfolios-swiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C53B268C24FD1685004184B9 /* Debug */,
+				C53B268D24FD1685004184B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C53B266F24FD1682004184B9 /* Project object */;
+}
