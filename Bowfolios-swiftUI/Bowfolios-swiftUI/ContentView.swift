@@ -38,7 +38,7 @@ struct ContentView: View {
                 
             }
         }.onAppear(perform: getUser)
-        .onAppear(perform: getSomething)
+        //.onAppear(perform: getSomething)
     }
     
     //    func readData(){
