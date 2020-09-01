@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C52E54AC24FDABAE004372CF /* Pages in Frameworks */ = {isa = PBXBuildFile; productRef = C52E54AB24FDABAE004372CF /* Pages */; };
+		C52E54AE24FDAC03004372CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E54AD24FDAC03004372CF /* HomeView.swift */; };
 		C53B267B24FD1682004184B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267A24FD1682004184B9 /* AppDelegate.swift */; };
 		C53B267D24FD1682004184B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267C24FD1682004184B9 /* SceneDelegate.swift */; };
 		C53B267F24FD1682004184B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267E24FD1682004184B9 /* ContentView.swift */; };
@@ -21,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		952D9BF81DF6665EAF5671C1 /* Pods-Bowfolios-swiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowfolios-swiftUI.release.xcconfig"; path = "Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		C52E54AD24FDAC03004372CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C53B267724FD1682004184B9 /* Bowfolios-swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowfolios-swiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53B267A24FD1682004184B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53B267C24FD1682004184B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA7C6C5910522885E158AA1 /* Pods_Bowfolios_swiftUI.framework in Frameworks */,
+				C52E54AC24FDABAE004372CF /* Pages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +92,10 @@
 			children = (
 				C53B267A24FD1682004184B9 /* AppDelegate.swift */,
 				C53B267C24FD1682004184B9 /* SceneDelegate.swift */,
+				C5A572F024FD237E00811465 /* SessionStore.swift */,
 				C53B267E24FD1682004184B9 /* ContentView.swift */,
 				C5A572EE24FD233800811465 /* AuthView.swift */,
-				C5A572F024FD237E00811465 /* SessionStore.swift */,
+				C52E54AD24FDAC03004372CF /* HomeView.swift */,
 				C53B268024FD1685004184B9 /* Assets.xcassets */,
 				C53B268524FD1685004184B9 /* LaunchScreen.storyboard */,
 				C53B268E24FD17C9004184B9 /* GoogleService-Info.plist */,
@@ -126,6 +131,9 @@
 			dependencies = (
 			);
 			name = "Bowfolios-swiftUI";
+			packageProductDependencies = (
+				C52E54AB24FDABAE004372CF /* Pages */,
+			);
 			productName = "Bowfolios-swiftUI";
 			productReference = C53B267724FD1682004184B9 /* Bowfolios-swiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +162,9 @@
 				Base,
 			);
 			mainGroup = C53B266E24FD1682004184B9;
+			packageReferences = (
+				C52E54AA24FDABAE004372CF /* XCRemoteSwiftPackageReference "Pages" */,
+			);
 			productRefGroup = C53B267824FD1682004184B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,6 +238,7 @@
 				C53B267B24FD1682004184B9 /* AppDelegate.swift in Sources */,
 				C5A572F124FD237E00811465 /* SessionStore.swift in Sources */,
 				C53B267D24FD1682004184B9 /* SceneDelegate.swift in Sources */,
+				C52E54AE24FDAC03004372CF /* HomeView.swift in Sources */,
 				C5A572EF24FD233800811465 /* AuthView.swift in Sources */,
 				C53B267F24FD1682004184B9 /* ContentView.swift in Sources */,
 			);
@@ -424,6 +436,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C52E54AA24FDABAE004372CF /* XCRemoteSwiftPackageReference "Pages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nachonavarro/Pages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C52E54AB24FDABAE004372CF /* Pages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C52E54AA24FDABAE004372CF /* XCRemoteSwiftPackageReference "Pages" */;
+			productName = Pages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C53B266F24FD1682004184B9 /* Project object */;
 }

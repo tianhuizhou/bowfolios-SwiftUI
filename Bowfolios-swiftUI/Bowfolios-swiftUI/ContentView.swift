@@ -27,7 +27,7 @@ struct ContentView: View {
         Group{
             if session.session != nil {
                 
-                HomeView()
+                Text("homeview")
                 
                 
                 
@@ -59,15 +59,15 @@ struct ContentView: View {
     //    }
 }
 
-struct HomeView: View {
-    //@EnvironmentObject var session: SessionStore
-    
-    var body: some View {
-        NavigationView{
-            SecondView()
-        }
-    }
-}
+//struct HomeView: View {
+//    //@EnvironmentObject var session: SessionStore
+//
+//    var body: some View {
+//        NavigationView{
+//            SecondView()
+//        }
+//    }
+//}
 
 struct SecondView: View {
     
