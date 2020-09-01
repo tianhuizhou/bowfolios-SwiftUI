@@ -40,6 +40,7 @@ class SessionStore: ObservableObject {
         do {
             try Auth.auth().signOut()
             self.session = nil
+            print("Sign out successfully")
         } catch {
             print("Error sign out!")
         }

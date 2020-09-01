@@ -25,15 +25,17 @@ struct ContentView: View {
     }
     var body: some View {
         Group{
+            //judging the current user State with Firebase Auth
             if session.session != nil {
                 
-                Text("homeview")
+                //user already logged in
                 
+                HomeView()
                 
                 
             }
             else {
-                // AddInfo()
+                // no available loggin state
                 AuthView()
                 
             }

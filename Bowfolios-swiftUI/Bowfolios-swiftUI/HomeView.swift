@@ -12,6 +12,7 @@ import Pages
 
 struct HomeView: View {
     //@State var index: Int = 0
+    @EnvironmentObject var session: SessionStore
     @State var selected = 0
     var body: some View {
         
@@ -27,7 +28,7 @@ struct HomeView: View {
                          Text("...and this is Page 3")
                          Circle() // The 4th page is a Circle
                          PageOne()
-                         PageOne()
+                         
                     }
                 }
             }
@@ -36,9 +37,14 @@ struct HomeView: View {
 }
 
 struct PageOne: View {
+    @EnvironmentObject var session: SessionStore
     var body: some View{
         VStack {
         Spacer()
+            Button(action: session.signOut){
+                Text("Quit")
+                
+            }.padding()
         HStack {
             
             Text("Page 1")
@@ -63,7 +69,7 @@ struct PageOne: View {
 
 
 struct TopBar: View {
-    
+    @EnvironmentObject var session: SessionStore
     @Binding var selected: Int
     var body: some View{
         VStack(spacing: 20){
