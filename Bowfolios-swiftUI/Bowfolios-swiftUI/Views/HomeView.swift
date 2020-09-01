@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Pages
-
+import Firebase
 
 struct HomeView: View {
     //@State var index: Int = 0
@@ -23,50 +23,38 @@ struct HomeView: View {
                 VStack{
                     
                     Pages(currentPage: self.$selected) {
+                         PageOne()
                          Text("Welcome! This is Page 1")
                          Text("This is Page 2")
                          Text("...and this is Page 3")
                          Circle() // The 4th page is a Circle
-                         PageOne()
                          
                     }
                 }
             }
+            
         }.edgesIgnoringSafeArea(.top)
     }
 }
 
+// MARK: - Subviews
+
 struct PageOne: View {
     @EnvironmentObject var session: SessionStore
+    @State var infoOne: String = ""
+    @State var infoTwo: String = ""
     var body: some View{
         VStack {
-        Spacer()
-            Button(action: session.signOut){
-                Text("Quit")
-                
-            }.padding()
-        HStack {
-            
-            Text("Page 1")
-            
+            Text(infoOne)
+            Text(infoTwo)
         }
-    }
 }
+    
 }
 
-//struct PageViews: View {
-//    @State var index: Int = 0
-//    var body: some View{
-//                Pages(currentPage: $index) {
-//                     Text("Welcome! This is Page 1")
-//                     Text("This is Page 2")
-//                     Text("...and this is Page 3")
-//                     Circle() // The 4th page is a Circle
-//                     PageOne()
-//                }
-//    }
-//}
 
+
+// MARK: - Navigation Bar
 
 struct TopBar: View {
     @EnvironmentObject var session: SessionStore
@@ -92,7 +80,7 @@ struct TopBar: View {
                     self.selected = 0
                    
                 }){
-                    Text("test1").fontWeight(.semibold).foregroundColor(self.selected == 0 ? .white: Color.white.opacity(0.5))
+                    Text("Project").fontWeight(.semibold).foregroundColor(self.selected == 0 ? .white: Color.white.opacity(0.5))
                 }
                 Spacer(minLength: 8)
                 
@@ -125,7 +113,7 @@ struct TopBar: View {
                 
             }.padding(.top)
             
-        }.padding().padding(.top, (UIApplication.shared.windows.last?.safeAreaInsets.top)! + 10).background(Color("Color"))
+        }.padding().padding(.top, (UIApplication.shared.windows.last?.safeAreaInsets.top)! + 10).background(Color("Color-1"))
     }
 }
 
@@ -133,6 +121,6 @@ struct TopBar: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        PageOne()
     }
 }
