@@ -24,7 +24,7 @@ struct HomeView: View {
                     
                     Pages(currentPage: self.$selected) {
                          PageOne()
-                         PageOneSubView()
+                         PageTwoSubView()
                          Text("Welcome! This is Page 1")
                          Text("This is Page 2")
                          Circle() // The 4th page is a Circle
@@ -48,7 +48,14 @@ struct PageOne: View {
     
 }
 
-
+struct PageTwo: View {
+    @EnvironmentObject var session: SessionStore
+    
+    var body: some View{
+        PageTwoSubView()
+}
+    
+}
 
 // MARK: - Navigation Bar
 

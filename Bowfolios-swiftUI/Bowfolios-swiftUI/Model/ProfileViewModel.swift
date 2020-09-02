@@ -14,7 +14,7 @@ import Firebase
 class ProfileViewModel: ObservableObject{
     
     @Published var profiles: [Profile] = []
-    @Published var interests: [String] = []
+    
     let ref = Firestore.firestore()
     
     func getAllProfiles() {
@@ -30,11 +30,13 @@ class ProfileViewModel: ObservableObject{
                 
                 if profile != nil {
                     self.profiles.append(profile!)
-                    for interest in profile!.interests {
-                        if !self.interests.contains(interest) {
-                            self.interests.append(interest)
-                        }
-                    }
+                    
+//                    for eachInterest in profile!.interests{
+//                        if !self.allInterests.contains(eachInterest) {
+//                            self.allInterests.append(eachInterest)
+//                        }
+//                    }
+                        
                 } else {
                     print("Error in loading database!")
                 }
@@ -42,3 +44,4 @@ class ProfileViewModel: ObservableObject{
         }
     }
 }
+

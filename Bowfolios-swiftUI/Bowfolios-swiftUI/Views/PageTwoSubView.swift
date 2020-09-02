@@ -9,12 +9,53 @@
 import SwiftUI
 
 struct PageTwoSubView: View {
+    
+    @ObservedObject var interestViewModel = InterestViewModel()
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+                    List{
+                        
+                        ForEach(self.interestViewModel.allInterests){intestSection in
+                            
+                            InterestsGroupView(member: intestSection.members, title: intestSection.theInterest)
+                        }
+                    }
+                }.onAppear {
+                    self.interestViewModel.getAllInterests()
+                }
+    }
+    
+}
+    
+    
+
+
+struct InterestsGroupView: View {
+    
+    var member: [String]
+    var title: String
+    
+    var body: some View {
+        VStack{
+            Text(title).font(.largeTitle)
+            HStack{
+                //display people's name who has the same interest
+                ForEach(member, id: \.self) {mb in
+                    Text("\(mb)").padding(.horizontal)
+                }
+                
+                //in the future, there should display image instead of string
+                Spacer()
+            }.padding()
+        }.padding(.bottom)
     }
 }
 
 struct PageTwoSubView_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
         PageTwoSubView()
     }
