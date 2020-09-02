@@ -19,9 +19,10 @@ struct PageOneSubView: View {
                 
                 ForEach(self.profileModel.profiles){profile in
                     
-                    Text(profile.Name)
-                    Text(profile.Email)
-                    Text(profile.Title)
+//                    Text(profile.Name)
+//                    Text(profile.Email)
+//                    Text(profile.Title)
+                    ProfileRowView(name: profile.Name, title: profile.Title, bio: profile.Bio, interest: profile.interests, project: profile.Projects)
                     
                 }
             }
@@ -33,16 +34,22 @@ struct PageOneSubView: View {
 
 struct ProfileRowView: View {
     
+    var name: String
+    var title: String
+    var bio: String
+    var interest: String
+    var project: [String]
+    
     var body: some View{
         VStack{
         HStack(){
             VStack(alignment: .leading){
-            Text("name")
+            Text(name)
                 .font(.title)
                 .fontWeight(.medium)
                 
             
-            Text("Title")
+            Text(title)
                 .font(.subheadline)
                 .foregroundColor(Color.gray)
                 
@@ -53,20 +60,48 @@ struct ProfileRowView: View {
             Image("turtlerock").resizable().frame(width: 50.0, height: 50.0)
         }.padding(.horizontal)
             HStack(){
-            Text("there is a description about myself, personal imformation.")
+            Text(bio)
                 .multilineTextAlignment(.leading)
                 
                 Spacer()
             }.padding(.horizontal)
             HStack{
-                Text("Basketball")
+                
+                Text(interest)
                     .font(.system(size: 11))
                     .fontWeight(.heavy)
                     .foregroundColor(Color(.white))
                     .multilineTextAlignment(.center)
                     .padding(.all,5)
                     .background(Color("Color-label"))
-            }
+                
+//                Text("Basketball")
+//                .font(.system(size: 11))
+//                .fontWeight(.heavy)
+//                .foregroundColor(Color(.white))
+//                .multilineTextAlignment(.center)
+//                .padding(.all,5)
+//                .background(Color("Color-label"))
+                
+                Spacer()
+            }.padding()
+            
+            HStack{
+                
+                Text("Projects")
+                    .font(.headline)
+                
+                Spacer()
+            }.padding(.bottom)
+            
+            HStack{
+                
+                Text(project[0])
+                
+                Spacer()
+                
+            }.padding(.bottom)
+            
         }
         
     }
@@ -74,6 +109,6 @@ struct ProfileRowView: View {
 
 struct PageOneSubView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileRowView()
+        PageOneSubView()
     }
 }

@@ -43,9 +43,7 @@ struct PageOne: View {
     @EnvironmentObject var session: SessionStore
     
     var body: some View{
-        VStack {
-            Text("pageOne")
-        }
+        PageOneSubView()
 }
     
 }
