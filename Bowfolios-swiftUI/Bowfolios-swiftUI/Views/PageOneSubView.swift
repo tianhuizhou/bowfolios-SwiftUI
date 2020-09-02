@@ -37,7 +37,7 @@ struct ProfileRowView: View {
     var name: String
     var title: String
     var bio: String
-    var interest: String
+    var interest: [String]
     var project: [String]
     
     var body: some View{
@@ -58,37 +58,32 @@ struct ProfileRowView: View {
             Spacer()
             
             Image("turtlerock").resizable().frame(width: 50.0, height: 50.0)
-        }.padding(.horizontal)
+        }//.padding(.horizontal)
             HStack(){
             Text(bio)
                 .multilineTextAlignment(.leading)
                 
                 Spacer()
-            }.padding(.horizontal)
+            }//.padding(.horizontal)
             HStack{
                 
-                Text(interest)
+                ForEach(interest, id: \.self){it in
+                Text(" \(it) ")
                     .font(.system(size: 11))
                     .fontWeight(.heavy)
                     .foregroundColor(Color(.white))
                     .multilineTextAlignment(.center)
-                    .padding(.all,5)
+                    .padding(.vertical,5)
                     .background(Color("Color-label"))
-                
-//                Text("Basketball")
-//                .font(.system(size: 11))
-//                .fontWeight(.heavy)
-//                .foregroundColor(Color(.white))
-//                .multilineTextAlignment(.center)
-//                .padding(.all,5)
-//                .background(Color("Color-label"))
+                    .cornerRadius(5)
+                }
                 
                 Spacer()
-            }.padding()
+            }.padding(.vertical)
             
             HStack{
                 
-                Text("Projects")
+                Text("Projects:")
                     .font(.headline)
                 
                 Spacer()
@@ -96,7 +91,9 @@ struct ProfileRowView: View {
             
             HStack{
                 
-                Text(project[0])
+                ForEach(project, id: \.self) {pj in
+                    Text("\(pj)").padding(.horizontal)
+                }
                 
                 Spacer()
                 

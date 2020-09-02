@@ -76,7 +76,7 @@ struct TopBar: View {
                     self.selected = 0
                    
                 }){
-                    Text("Project").fontWeight(.semibold).foregroundColor(self.selected == 0 ? .white: Color.white.opacity(0.5))
+                    Text("Profiles").fontWeight(.semibold).foregroundColor(self.selected == 0 ? .white: Color.white.opacity(0.5))
                 }
                 Spacer(minLength: 8)
                 
