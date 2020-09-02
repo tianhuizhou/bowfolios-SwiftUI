@@ -26,6 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView.environmentObject(SessionStore()))
+            
+            //for doing test sence
+//            window.rootViewController = UIHostingController(rootView: PageOneSubView())
+            
             self.window = window
             window.makeKeyAndVisible()
         }

@@ -24,9 +24,9 @@ struct HomeView: View {
                     
                     Pages(currentPage: self.$selected) {
                          PageOne()
+                         PageOneSubView()
                          Text("Welcome! This is Page 1")
                          Text("This is Page 2")
-                         Text("...and this is Page 3")
                          Circle() // The 4th page is a Circle
                          
                     }
@@ -41,12 +41,10 @@ struct HomeView: View {
 
 struct PageOne: View {
     @EnvironmentObject var session: SessionStore
-    @State var infoOne: String = ""
-    @State var infoTwo: String = ""
+    
     var body: some View{
         VStack {
-            Text(infoOne)
-            Text(infoTwo)
+            Text("pageOne")
         }
 }
     
