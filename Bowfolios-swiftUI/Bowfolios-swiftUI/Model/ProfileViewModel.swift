@@ -42,6 +42,8 @@ class ProfileViewModel: ObservableObject{
                 }
             }
         }
+        print("test the get files func")
+        return
     }
 }
 

@@ -13,7 +13,9 @@ import Firebase
 struct HomeView: View {
     //@State var index: Int = 0
     @EnvironmentObject var session: SessionStore
+    //@ObservedObject var profileModel = ProfileViewModel()
     @State var selected = 0
+    
     var body: some View {
         
         VStack{
@@ -23,30 +25,33 @@ struct HomeView: View {
                 VStack{
                     
                     Pages(currentPage: self.$selected) {
-                         PageOne()
-                         PageTwoSubView()
+                         PageOneSubView()
+                         Text("Page 2")
+//                         PageOneSubView(profileModel: self.profileModel)
                          Text("Welcome! This is Page 1")
                          Text("This is Page 2")
                          Circle() // The 4th page is a Circle
                          
                     }
+                    
                 }
             }
             
-        }.edgesIgnoringSafeArea(.top)
+            }.edgesIgnoringSafeArea(.top)
+    
     }
 }
 
 // MARK: - Subviews
 
-struct PageOne: View {
-    @EnvironmentObject var session: SessionStore
-    
-    var body: some View{
-        PageOneSubView()
-}
-    
-}
+//struct PageOne: View {
+//    @EnvironmentObject var session: SessionStore
+//
+//    var body: some View{
+//        PageOneSubView()
+//}
+//
+//}
 
 struct PageTwo: View {
     @EnvironmentObject var session: SessionStore
@@ -124,6 +129,6 @@ struct TopBar: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        PageOne()
+        Text("asa")
     }
 }

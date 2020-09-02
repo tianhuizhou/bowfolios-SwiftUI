@@ -10,7 +10,9 @@ import SwiftUI
 
 struct PageOneSubView: View {
     
-    @State var profile = ""
+    //@State var profile = ""
+    //@ObservedObject var profileModel = ProfileViewModel()
+    
     @ObservedObject var profileModel = ProfileViewModel()
     
     var body: some View {
@@ -18,10 +20,7 @@ struct PageOneSubView: View {
             List{
                 
                 ForEach(self.profileModel.profiles){profile in
-                    
-//                    Text(profile.Name)
-//                    Text(profile.Email)
-//                    Text(profile.Title)
+                      
                     ProfileRowView(name: profile.Name, title: profile.Title, bio: profile.Bio, interest: profile.interests, project: profile.Projects)
                     
                 }
@@ -34,11 +33,13 @@ struct PageOneSubView: View {
 
 struct ProfileRowView: View {
     
+    
     var name: String
     var title: String
     var bio: String
     var interest: [String]
     var project: [String]
+    
     
     var body: some View{
         VStack{
@@ -106,6 +107,7 @@ struct ProfileRowView: View {
 
 struct PageOneSubView_Previews: PreviewProvider {
     static var previews: some View {
-        PageOneSubView()
+        Text("hi")
+        //PageOneSubView()
     }
 }
