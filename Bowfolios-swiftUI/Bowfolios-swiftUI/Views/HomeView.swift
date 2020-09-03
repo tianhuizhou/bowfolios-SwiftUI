@@ -13,7 +13,7 @@ import Firebase
 struct HomeView: View {
     //@State var index: Int = 0
     @EnvironmentObject var session: SessionStore
-    //@ObservedObject var profileModel = ProfileViewModel()
+    @ObservedObject var profileModel = ProfileViewModel()
     @State var selected = 0
     
     var body: some View {
@@ -25,19 +25,32 @@ struct HomeView: View {
                 VStack{
                     
                     Pages(currentPage: self.$selected) {
-                         PageOneSubView()
-                         Text("Page 2")
-//                         PageOneSubView(profileModel: self.profileModel)
-                         Text("Welcome! This is Page 1")
-                         Text("This is Page 2")
+                         //PageOneSubView()
+                         PageOneSubView(profileModel: self.profileModel)
+                        Button(action: {
+                            self.session.signOut()
+                        }){
+                            Text("Quit the app")
+                        }
+                         Text("Welcome! This is Page 3")
+                         Text("This is Page 4")
                          Circle() // The 4th page is a Circle
                          
                     }
                     
                 }
+                
             }
             
-            }.edgesIgnoringSafeArea(.top)
+            Button(action: {
+                self.profileModel.getAllProfiles()
+            }){
+                Text("Click me to refresh the page")
+            }
+            
+        }.onAppear(perform: {
+            self.profileModel.getAllProfiles()
+        }).edgesIgnoringSafeArea(.top)
     
     }
 }
