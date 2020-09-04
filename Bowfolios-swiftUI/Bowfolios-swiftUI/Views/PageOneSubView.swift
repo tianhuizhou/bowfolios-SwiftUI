@@ -13,7 +13,7 @@ struct PageOneSubView: View {
     //@State var profile = ""
     //@ObservedObject var profileModel = ProfileViewModel()
     
-    @ObservedObject var profileModel: ProfileViewModel
+    @ObservedObject var profileModel = ProfileViewModel()
     
     var body: some View {
         VStack{
@@ -25,9 +25,9 @@ struct PageOneSubView: View {
                     
                 }
             }
-        }//.onAppear {
-            //self.profileModel.getAllProfiles()
-       // }
+        }.onAppear {
+            self.profileModel.getAllProfiles()
+        }
     }
 }
 

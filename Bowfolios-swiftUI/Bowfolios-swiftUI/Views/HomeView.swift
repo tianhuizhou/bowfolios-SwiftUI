@@ -26,8 +26,8 @@ struct HomeView: View {
                     
                     Pages(currentPage: self.$selected) {
                          //PageOneSubView()
-                         PageOneSubView(profileModel: self.profileModel)
-                         PageTwoSubView(profileViewModel: self.profileModel)
+                         PageOneSubView()
+                         PageTwoSubView()
                          PageThreeSubView()
                         Button(action: {
                             self.session.signOut()
@@ -49,9 +49,7 @@ struct HomeView: View {
                 Text("Click me to refresh the page")
             }
             
-        }.onAppear(perform: {
-            self.profileModel.getAllProfiles()
-        }).edgesIgnoringSafeArea(.top)
+        }.edgesIgnoringSafeArea(.top)
     
     }
 }

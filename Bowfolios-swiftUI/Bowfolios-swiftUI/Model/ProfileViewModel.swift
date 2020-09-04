@@ -24,7 +24,7 @@ class ProfileViewModel: ObservableObject{
         //reset to default as empty collections to avoid duplication
         profiles = []
         interestsAndMembers = []
-        ref.collection("Profiles").getDocuments { (snap, error) in
+        ref.collection("Profiles").addSnapshotListener { (snap, error) in
             guard let docs = snap else{return}
                 
                 docs.documentChanges.forEach { (doc) in

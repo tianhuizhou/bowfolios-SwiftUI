@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PageTwoSubView: View {
     
-    @ObservedObject var profileViewModel: ProfileViewModel
+    @ObservedObject var profileViewModel = ProfileViewModel()
     
     
     var body: some View {
@@ -21,7 +21,9 @@ struct PageTwoSubView: View {
                             InterestsGroupView(member: inteSec.members, title: inteSec.theInterest)
                         }
                     }
-                }
+        }.onAppear {
+            self.profileViewModel.getAllProfiles()
+        }
     }
     
 }
