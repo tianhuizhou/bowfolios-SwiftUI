@@ -28,14 +28,14 @@ struct HomeView: View {
                          //PageOneSubView()
                          PageOneSubView(profileModel: self.profileModel)
                          PageTwoSubView(profileViewModel: self.profileModel)
+                         PageThreeSubView()
                         Button(action: {
                             self.session.signOut()
                         }){
                             Text("Quit the app")
                         }
-                         Text("This is Page 4")
-                       // Text("asasas")
-                         Circle() // The 4th page is a Circle
+                         
+                       Circle() // The 4th page is a Circle
                          
                     }
                     
