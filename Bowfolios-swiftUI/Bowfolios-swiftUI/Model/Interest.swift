@@ -11,9 +11,8 @@ import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
 
-struct anInterest: Codable, Identifiable {
-    
-    @DocumentID var id: String?
+struct anInterest: Codable, Hashable {
+    //@DocumentID var id: String?
     var theInterest: String
     var members: [String]
 }

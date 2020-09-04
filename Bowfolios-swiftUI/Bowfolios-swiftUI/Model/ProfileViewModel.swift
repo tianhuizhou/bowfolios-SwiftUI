@@ -14,27 +14,33 @@ import Firebase
 class ProfileViewModel: ObservableObject{
     
     @Published var profiles: [Profile] = []
+    @Published var interestsAndMembers: [anInterest] = []
+    
     
     let ref = Firestore.firestore()
     
     func getAllProfiles() {
+        
+        //reset to default as empty collections to avoid duplication
         profiles = []
+        //interestsAndMembers = []
+        
         ref.collection("Profiles").addSnapshotListener { (snap, error) in
             
             guard let docs = snap else{return}
             
             docs.documentChanges.forEach { (doc) in
                 
-        
                 let profile = try! doc.document.data(as: Profile.self)
                 
                 if profile != nil {
-                   
+                    
                     
                     if self.profiles.isEmpty {
                         //print("should be display only once")
                         self.profiles.append(profile!)
                         //print("I am adding \(profile!.Name)")
+                        
                     } else {
                         var jg = 0
                         for var eachProfile in self.profiles {
@@ -51,20 +57,44 @@ class ProfileViewModel: ObservableObject{
                             print("I am adding \(profile!.Name)")
                         }
                     }
-//                    for eachInterest in profile!.interests{
-//                        if !self.allInterests.contains(eachInterest) {
-//                            self.allInterests.append(eachInterest)
+                    
+//                    for eachIntes in profile!.interests {
+//
+//                        // } else {
+//                        var numJg = 0
+//                        if self.interestsAndMembers.count > 0 {
+//                            for num in 0...(self.interestsAndMembers.count-1) {
+//                                if self.interestsAndMembers[num].theInterest == eachIntes {
+//                                    numJg = 1
+//                                    //ea.members.append(profile!.Name)
+//                                    self.interestsAndMembers[num].members.append(profile!.Name)
+//                                    print("only name")
+//                                }
+//                            }
 //                        }
+//                        if numJg == 0 {
+//                            print("New interest")
+//                            self.interestsAndMembers.append(anInterest(theInterest: eachIntes, members: [profile!.Name]))
+//                        }
+//                        // }
+//                        print(self.interestsAndMembers)
 //                    }
-                        
+                    
                 } else {
                     print("Error in loading database!")
                 }
                 print("the size of collection: \(self.profiles.count)")
             }
+            
         }
         print("test the get files func")
-        return
+        
     }
+    
+    func groupInterteMembers() {
+        interestsAndMembers = []
+        
+    }
+    
 }
 

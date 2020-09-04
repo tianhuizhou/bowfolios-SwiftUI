@@ -27,13 +27,14 @@ struct HomeView: View {
                     Pages(currentPage: self.$selected) {
                          //PageOneSubView()
                          PageOneSubView(profileModel: self.profileModel)
+                         PageTwoSubView(profileViewModel: self.profileModel)
                         Button(action: {
                             self.session.signOut()
                         }){
                             Text("Quit the app")
                         }
-                         Text("Welcome! This is Page 3")
                          Text("This is Page 4")
+                       // Text("asasas")
                          Circle() // The 4th page is a Circle
                          
                     }
@@ -66,14 +67,14 @@ struct HomeView: View {
 //
 //}
 
-struct PageTwo: View {
-    @EnvironmentObject var session: SessionStore
-    
-    var body: some View{
-        PageTwoSubView()
-}
-    
-}
+//struct PageTwo: View {
+//    @EnvironmentObject var session: SessionStore
+//    
+//    var body: some View{
+//        
+//}
+//    
+//}
 
 // MARK: - Navigation Bar
 

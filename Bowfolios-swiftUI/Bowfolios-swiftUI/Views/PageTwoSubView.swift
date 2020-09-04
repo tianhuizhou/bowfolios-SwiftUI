@@ -10,20 +10,17 @@ import SwiftUI
 
 struct PageTwoSubView: View {
     
-    @ObservedObject var interestViewModel = InterestViewModel()
+    @ObservedObject var profileViewModel: ProfileViewModel
     
     
     var body: some View {
         VStack{
                     List{
                         
-                        ForEach(self.interestViewModel.allInterests){intestSection in
-                            
-                            InterestsGroupView(member: intestSection.members, title: intestSection.theInterest)
+                        ForEach(self.profileViewModel.interestsAndMembers, id: \.self) { inteSec in
+                            InterestsGroupView(member: inteSec.members, title: inteSec.theInterest)
                         }
                     }
-                }.onAppear {
-                    self.interestViewModel.getAllInterests()
                 }
     }
     
@@ -57,6 +54,6 @@ struct PageTwoSubView_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        PageTwoSubView()
+        Text("hi")
     }
 }
