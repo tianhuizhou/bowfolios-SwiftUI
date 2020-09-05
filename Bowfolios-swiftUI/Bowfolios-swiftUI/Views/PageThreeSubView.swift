@@ -19,6 +19,11 @@ struct PageThreeSubView: View {
     @State private var interests = ""
     @State private var projects = ""
     
+    @State var showActionSheet = false
+    @State var showImagePicker = false
+    @State var sourceType: UIImagePickerController.SourceType = .camera
+    @State var image: UIImage?
+    
     func editProfile() {
         let db = Firestore.firestore()
         let userid = session.session!.uid
@@ -91,7 +96,30 @@ struct PageThreeSubView: View {
                     .background(Color.green)
             }
             
-                
+        Spacer()
+            Button(action: {
+                self.showActionSheet = true
+            }) {
+                Text("Show Image picker")
+            }.actionSheet(isPresented: $showActionSheet){
+                ActionSheet(title: Text("Add a picture"), message: nil, buttons: [
+                //button 1
+                    .default(Text("Camera"), action: {
+                        self.showImagePicker = true
+                        self.sourceType = .camera
+                    }),
+                    //button2
+                    .default(Text("Photo library"), action: {
+                        self.showImagePicker = true
+                        self.sourceType = .photoLibrary
+                    }),
+                    
+                    //button3
+                    .cancel()
+                ])
+            }.sheet(isPresented: $showImagePicker){
+                imagePicker(image: self.$image, sourceType: self.sourceType)
+            }
                 
             
         }
