@@ -205,9 +205,9 @@ struct menu : View {
                                
                     Text("Edit").fontWeight(.regular)
                 }
-//                .sheet(isPresented: $editView, content:{
-//                    PageThreeSubView()
-//                })
+                .sheet(isPresented: $editView, content:{
+                    PageThreeSubView()
+                })
                            
                 Spacer()
             }.padding(.leading, 20)
@@ -217,9 +217,9 @@ struct menu : View {
         }.background(Color.white).frame(width: UIScreen.main.bounds.width / 1.6)
        // if u want to change swipe menu background color
           //  }.navigationBar.hidden(true)
-            ZStack{
-                PageThreeSubView()
-            }.background(Color.yellow).edgesIgnoringSafeArea(.all).offset(x:0, y:self.editView ? 0 :UIApplication.shared.keyWindow?.frame.height ?? 0)
+//            ZStack{
+//                PageThreeSubView()
+//            }.background(Color.yellow).edgesIgnoringSafeArea(.all).offset(x:0, y:self.editView ? 0 :UIApplication.shared.keyWindow?.frame.height ?? 0)
             
     }
         
