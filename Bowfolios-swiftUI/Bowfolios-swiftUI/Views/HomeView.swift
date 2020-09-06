@@ -19,7 +19,9 @@ struct HomeView: View {
     var body: some View {
         
         VStack{
-            TopBar(selected: $selected)
+           // NavigationView{
+                TopBar(selected: $selected)
+            //}
             GeometryReader{ _ in
                 
                 VStack{
@@ -79,15 +81,25 @@ struct HomeView: View {
 struct TopBar: View {
     @EnvironmentObject var session: SessionStore
     @Binding var selected: Int
+    @State var imageIcon: UIImage?
     var body: some View{
+        
         VStack(spacing: 20){
             HStack{
+                
+                NavigationLink(destination: PageThreeSubView()) {
+                    Text("Edit")
+                }
+                
+                
+                Spacer()
+                
                 Text("Bowfolios").font(.system(size: 20)).fontWeight(.semibold).foregroundColor(.white)
                 
                 Spacer()
                 
                 Button(action: {
-                    self.selected = 8
+                    //self.selected = 8
                 }){
                     Image(systemName: "plus").font(.headline).foregroundColor(.white)
                     
@@ -107,7 +119,7 @@ struct TopBar: View {
                 Button(action: {
                     self.selected = 1
                 }){
-                    Text("test2").fontWeight(.semibold).foregroundColor(self.selected == 1 ? .white: Color.white.opacity(0.5))
+                    Text("Interests").fontWeight(.semibold).foregroundColor(self.selected == 1 ? .white: Color.white.opacity(0.5))
                 }
                 Spacer(minLength: 8)
                 
@@ -133,14 +145,15 @@ struct TopBar: View {
                 
             }.padding(.top)
             
-        }.padding().padding(.top, (UIApplication.shared.windows.last?.safeAreaInsets.top)! + 10).background(Color("Color-1"))
+        }.padding().padding(.top, (UIApplication.shared.windows.last?.safeAreaInsets.top)! + 0).background(Color("Color-1"))
     }
+    
 }
 
 
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Text("asa")
+        HomeView()
     }
 }

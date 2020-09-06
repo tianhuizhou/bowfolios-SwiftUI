@@ -28,7 +28,7 @@ struct PageThreeSubView: View {
         let db = Firestore.firestore()
         let userid = session.session!.uid
         
-        db.collection("Profiles").document("\(userid)").setData(["Bio": bio, "Email":session.session!.email, "Interests": [interests], "Name": name, "Projects": [projects], "Title": title])
+        db.collection("Profiles").document("\(userid)").setData(["Bio": bio, "Email":session.session!.email, "ImagePath": userid, "Interests": [interests], "Name": name, "Projects": [projects], "Title": title])
         
         //case 1: users chose a image as their profile photo
         if let thisImage = self.image {
@@ -154,7 +154,7 @@ struct PageThreeSubView: View {
 }
 
 func uploadImage(image: UIImage, path: String){
-    if let imageData = image.jpegData(compressionQuality: 1){
+    if let imageData = image.jpegData(compressionQuality: 0.2){
         let storage = Storage.storage()
         storage.reference().child(path).putData(imageData, metadata: nil){
             (_, err) in

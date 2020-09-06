@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct PageOneSubView: View {
     
@@ -21,7 +22,7 @@ struct PageOneSubView: View {
                 
                 ForEach(self.profileModel.profiles){profile in
                       
-                    ProfileRowView(name: profile.Name, title: profile.Title, bio: profile.Bio, interest: profile.interests, project: profile.Projects)
+                    ProfileRowView(name: profile.Name, title: profile.Title, bio: profile.Bio, interest: profile.interests, project: profile.Projects, imagePath: profile.ImagePath)
                     
                 }
             }
@@ -39,7 +40,28 @@ struct ProfileRowView: View {
     var bio: String
     var interest: [String]
     var project: [String]
+    var imagePath: String?
+    @State var photo: UIImage?
     
+    //func - loading photo from firebase
+    func getPhoto(){
+        
+        if imagePath != nil {
+            Storage.storage().reference().child(imagePath!).getData(maxSize: 5 * 1024 * 1024) { (imageData, err) in
+                if let err = err {
+                    print("an error has happened - \(err.localizedDescription)")
+                } else {
+                    if let imageData = imageData {
+                        self.photo = UIImage(data: imageData)
+                    } else {
+                        print("couldn't unwrap image data!")
+                    }
+                }
+            }
+        } else {
+            print("image is setted to default")
+        }
+    }
     
     var body: some View{
         VStack{
@@ -58,7 +80,15 @@ struct ProfileRowView: View {
             
             Spacer()
             
-            Image("turtlerock").resizable().frame(width: 50.0, height: 50.0)
+            if photo == nil {
+            
+                Image("turtlerock").resizable().frame(width: 50.0, height: 50.0)
+                
+            } else {
+                
+                Image(uiImage: photo!).resizable().frame(width: 50.0, height: 50.0)
+                
+            }
         }//.padding(.horizontal)
             HStack(){
             Text(bio)
@@ -100,6 +130,8 @@ struct ProfileRowView: View {
                 
             }.padding(.bottom)
             
+        }.onAppear {
+            self.getPhoto()
         }
         
     }

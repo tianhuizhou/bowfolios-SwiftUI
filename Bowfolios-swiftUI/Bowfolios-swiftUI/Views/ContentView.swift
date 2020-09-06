@@ -29,9 +29,9 @@ struct ContentView: View {
             if session.session != nil {
                 
                 //user already logged in
-                
-                HomeView()
-                
+                //NavigationView{
+                    HomeView()
+               // }
                 
             }
             else {
