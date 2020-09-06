@@ -33,6 +33,15 @@ struct PageThreeSubView: View {
     
     var body: some View {
         VStack{
+            Button(action: {
+                if let thisImage = self.image {
+                    uploadImage(image: thisImage)
+                } else {
+                    print("could't upload image - no image present!")
+                }
+            }) {
+                Text("Upload Image")
+            }
             
             HStack{
                 Text("Name")
@@ -97,15 +106,19 @@ struct PageThreeSubView: View {
             }
             
         Spacer()
+                        
+            
             Button(action: {
                 self.showActionSheet = true
             }) {
                 if image == nil {
                     Text("pick a image")
                 }else{
-                    Text("got a image")
-//                    Image(uiImage: image!).resizable().scaledToFit()
-//                        .frame(width:50, height: 50)
+                    ZStack{
+                                            
+                        Image(uiImage: image!).renderingMode(.original).resizable().scaledToFit().frame(width:200, height: 100)
+                        Text("test")
+                    }
                 }
             }.actionSheet(isPresented: $showActionSheet){
                 ActionSheet(title: Text("Add a picture"), message: nil, buttons: [
@@ -127,11 +140,42 @@ struct PageThreeSubView: View {
                 imagePicker(image: self.$image, showImagePicker: self.$showImagePicker, sourceType: self.sourceType)
                 
             }
+            
+            
+            
+            //a Button for testing uploading functionality, it should be included in the Edit button.
+//            Button(action: {
+//                if let thisImage = self.image {
+//                    uploadImage(image: thisImage)
+//                } else {
+//                    print("could't upload image - no image present!")
+//                }
+//            }) {
+//                Text("Upload Image")
+//            }
                 
             
         }
     }
 }
+
+func uploadImage(image: UIImage){
+    if let imageData = image.jpegData(compressionQuality: 1){
+        let storage = Storage.storage()
+        storage.reference().child("temp").putData(imageData, metadata: nil){
+            (_, err) in
+            if let err = err{
+                print("an error has happened -> \(err.localizedDescription)")
+            } else {
+                print("image uploaded successfully")
+            }
+        }
+        
+        } else {
+                   print("could't unwrap/case image to data")
+    }
+}
+
 
 struct PageThreeSubView_Previews: PreviewProvider {
     static var previews: some View {
