@@ -85,6 +85,29 @@ struct TopBar: View {
     @Binding var selected: Int
     @State var imageIcon: UIImage?
     @Binding var size: CGFloat
+    
+    @State var photo: UIImage?
+    
+    func getPhoto(){
+        let imagePath = session.session?.uid
+        if imagePath != nil {
+            Storage.storage().reference().child(imagePath!).getData(maxSize: 5 * 1024 * 1024) { (imageData, err) in
+                if let err = err {
+                    print("an error has happened - \(err.localizedDescription)")
+                } else {
+                    if let imageData = imageData {
+                        self.photo = UIImage(data: imageData)
+                    } else {
+                        print("couldn't unwrap image data!")
+                    }
+                }
+            }
+        } else {
+            print("image is setted to default")
+        }
+    }
+    
+    
     var body: some View{
         
         ZStack{
@@ -97,9 +120,16 @@ struct TopBar: View {
                     self.size = 10
                     print(self.size)
                 }) {
+                    if photo == nil {
                     Image("turtlerock").renderingMode(.original).resizable().scaledToFit().frame(width:50, height: 50).clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                    .shadow(radius: 10)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                        .shadow(radius: 10)
+                        
+                    }else{
+                        Image(uiImage: photo!).renderingMode(.original).resizable().scaledToFit().frame(width:50, height: 50).clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                            .shadow(radius: 10)
+                    }
                 }
                 
                 Spacer()
@@ -161,7 +191,9 @@ struct TopBar: View {
         //.padding(.top, (UIApplication.shared.windows.last?.safeAreaInsets.top)! + 0)
             
             
-    }
+        }.onAppear {
+            self.getPhoto()
+        }
         
     }
 }
