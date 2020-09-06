@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C52E54AC24FDABAE004372CF /* Pages in Frameworks */ = {isa = PBXBuildFile; productRef = C52E54AB24FDABAE004372CF /* Pages */; };
+		C52E54AE24FDAC03004372CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E54AD24FDAC03004372CF /* HomeView.swift */; };
+		C52E54B024FE4D13004372CF /* PageOneSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E54AF24FE4D13004372CF /* PageOneSubView.swift */; };
+		C52E54B424FEE851004372CF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E54B324FEE851004372CF /* Profile.swift */; };
+		C52E54B624FEED16004372CF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E54B524FEED16004372CF /* ProfileViewModel.swift */; };
 		C53B267B24FD1682004184B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267A24FD1682004184B9 /* AppDelegate.swift */; };
 		C53B267D24FD1682004184B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267C24FD1682004184B9 /* SceneDelegate.swift */; };
 		C53B267F24FD1682004184B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B267E24FD1682004184B9 /* ContentView.swift */; };
@@ -14,11 +19,21 @@
 		C53B268424FD1685004184B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53B268324FD1685004184B9 /* Preview Assets.xcassets */; };
 		C53B268724FD1685004184B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53B268524FD1685004184B9 /* LaunchScreen.storyboard */; };
 		C53B268F24FD17C9004184B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C53B268E24FD17C9004184B9 /* GoogleService-Info.plist */; };
+		C592E52924FF772E00A42BE7 /* PageTwoSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592E52824FF772D00A42BE7 /* PageTwoSubView.swift */; };
+		C592E52D24FF99F800A42BE7 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592E52C24FF99F800A42BE7 /* Interest.swift */; };
+		C5A572EF24FD233800811465 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A572EE24FD233800811465 /* AuthView.swift */; };
+		C5A572F124FD237E00811465 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A572F024FD237E00811465 /* SessionStore.swift */; };
+		C5A5B56125022CF6006D1C41 /* PageThreeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5B56025022CF6006D1C41 /* PageThreeSubView.swift */; };
+		C5A5B5632503927B006D1C41 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5B5622503927B006D1C41 /* ImagePicker.swift */; };
 		CFA7C6C5910522885E158AA1 /* Pods_Bowfolios_swiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E03E27D689BC58F0AACD26 /* Pods_Bowfolios_swiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		952D9BF81DF6665EAF5671C1 /* Pods-Bowfolios-swiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowfolios-swiftUI.release.xcconfig"; path = "Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		C52E54AD24FDAC03004372CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C52E54AF24FE4D13004372CF /* PageOneSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneSubView.swift; sourceTree = "<group>"; };
+		C52E54B324FEE851004372CF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		C52E54B524FEED16004372CF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C53B267724FD1682004184B9 /* Bowfolios-swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowfolios-swiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53B267A24FD1682004184B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53B267C24FD1682004184B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +43,12 @@
 		C53B268624FD1685004184B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C53B268824FD1685004184B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C53B268E24FD17C9004184B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C592E52824FF772D00A42BE7 /* PageTwoSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoSubView.swift; sourceTree = "<group>"; };
+		C592E52C24FF99F800A42BE7 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
+		C5A572EE24FD233800811465 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		C5A572F024FD237E00811465 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		C5A5B56025022CF6006D1C41 /* PageThreeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeSubView.swift; sourceTree = "<group>"; };
+		C5A5B5622503927B006D1C41 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D6E03E27D689BC58F0AACD26 /* Pods_Bowfolios_swiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bowfolios_swiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86839DCBA49AA04348BF80B /* Pods-Bowfolios-swiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bowfolios-swiftUI.debug.xcconfig"; path = "Target Support Files/Pods-Bowfolios-swiftUI/Pods-Bowfolios-swiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA7C6C5910522885E158AA1 /* Pods_Bowfolios_swiftUI.framework in Frameworks */,
+				C52E54AC24FDABAE004372CF /* Pages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +80,32 @@
 				D86839DCBA49AA04348BF80B /* Pods-Bowfolios-swiftUI.debug.xcconfig */,
 				952D9BF81DF6665EAF5671C1 /* Pods-Bowfolios-swiftUI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C52E54B124FE6C15004372CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5A572F024FD237E00811465 /* SessionStore.swift */,
+				C52E54B524FEED16004372CF /* ProfileViewModel.swift */,
+				C52E54B324FEE851004372CF /* Profile.swift */,
+				C592E52C24FF99F800A42BE7 /* Interest.swift */,
+				C5A5B5622503927B006D1C41 /* ImagePicker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C52E54B224FE6C55004372CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5A572EE24FD233800811465 /* AuthView.swift */,
+				C53B267E24FD1682004184B9 /* ContentView.swift */,
+				C52E54AD24FDAC03004372CF /* HomeView.swift */,
+				C52E54AF24FE4D13004372CF /* PageOneSubView.swift */,
+				C592E52824FF772D00A42BE7 /* PageTwoSubView.swift */,
+				C5A5B56025022CF6006D1C41 /* PageThreeSubView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C53B266E24FD1682004184B9 = {
@@ -85,7 +131,8 @@
 			children = (
 				C53B267A24FD1682004184B9 /* AppDelegate.swift */,
 				C53B267C24FD1682004184B9 /* SceneDelegate.swift */,
-				C53B267E24FD1682004184B9 /* ContentView.swift */,
+				C52E54B124FE6C15004372CF /* Model */,
+				C52E54B224FE6C55004372CF /* Views */,
 				C53B268024FD1685004184B9 /* Assets.xcassets */,
 				C53B268524FD1685004184B9 /* LaunchScreen.storyboard */,
 				C53B268E24FD17C9004184B9 /* GoogleService-Info.plist */,
@@ -121,6 +168,9 @@
 			dependencies = (
 			);
 			name = "Bowfolios-swiftUI";
+			packageProductDependencies = (
+				C52E54AB24FDABAE004372CF /* Pages */,
+			);
 			productName = "Bowfolios-swiftUI";
 			productReference = C53B267724FD1682004184B9 /* Bowfolios-swiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +199,9 @@
 				Base,
 			);
 			mainGroup = C53B266E24FD1682004184B9;
+			packageReferences = (
+				C52E54AA24FDABAE004372CF /* XCRemoteSwiftPackageReference "Pages" */,
+			);
 			productRefGroup = C53B267824FD1682004184B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,9 +272,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A5B5632503927B006D1C41 /* ImagePicker.swift in Sources */,
 				C53B267B24FD1682004184B9 /* AppDelegate.swift in Sources */,
+				C592E52D24FF99F800A42BE7 /* Interest.swift in Sources */,
+				C52E54B424FEE851004372CF /* Profile.swift in Sources */,
+				C5A572F124FD237E00811465 /* SessionStore.swift in Sources */,
+				C52E54B624FEED16004372CF /* ProfileViewModel.swift in Sources */,
 				C53B267D24FD1682004184B9 /* SceneDelegate.swift in Sources */,
+				C52E54AE24FDAC03004372CF /* HomeView.swift in Sources */,
+				C5A5B56125022CF6006D1C41 /* PageThreeSubView.swift in Sources */,
+				C5A572EF24FD233800811465 /* AuthView.swift in Sources */,
+				C52E54B024FE4D13004372CF /* PageOneSubView.swift in Sources */,
 				C53B267F24FD1682004184B9 /* ContentView.swift in Sources */,
+				C592E52924FF772E00A42BE7 /* PageTwoSubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -343,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -417,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C52E54AA24FDABAE004372CF /* XCRemoteSwiftPackageReference "Pages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nachonavarro/Pages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C52E54AB24FDABAE004372CF /* Pages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C52E54AA24FDABAE004372CF /* XCRemoteSwiftPackageReference "Pages" */;
+			productName = Pages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C53B266F24FD1682004184B9 /* Project object */;
 }
