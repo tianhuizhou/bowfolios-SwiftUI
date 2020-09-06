@@ -15,35 +15,16 @@ struct HomeView: View {
     @EnvironmentObject var session: SessionStore
     @ObservedObject var profileModel = ProfileViewModel()
     @State var selected = 0
+    @State var size = UIScreen.main.bounds.width / 1.6
     
     var body: some View {
-        
+        //NavigationView{
+        ZStack{
+            
         VStack{
-           // NavigationView{
-                TopBar(selected: $selected)
-            //}
-            GeometryReader{ _ in
-                
-                VStack{
-                    
-                    Pages(currentPage: self.$selected) {
-                         //PageOneSubView()
-                         PageOneSubView()
-                         PageTwoSubView()
-                         PageThreeSubView()
-                        Button(action: {
-                            self.session.signOut()
-                        }){
-                            Text("Quit the app")
-                        }
-                         
-                       Circle() // The 4th page is a Circle
-                         
-                    }
-                    
-                }
-                
-            }
+            TopBar(selected: $selected, size: $size)
+
+            PagesView(selected: $selected)
             
             Button(action: {
                 self.profileModel.getAllProfiles()
@@ -52,45 +33,74 @@ struct HomeView: View {
             }
             
         }.edgesIgnoringSafeArea(.top)
-    
+            
+            HStack{
+                
+                menu(size: $size)
+                .cornerRadius(20)
+                    .padding(.leading, -size)
+                    .offset(x: -size)
+                
+                Spacer()
+            }.edgesIgnoringSafeArea(.vertical)
+            
+        }.animation(.spring())
+           // }
     }
 }
 
-// MARK: - Subviews
+// MARK: - PagesView
+struct PagesView: View {
+    @EnvironmentObject var session: SessionStore
+    @Binding var selected: Int
+    var body: some View{
+        GeometryReader{ _ in
+            
+            VStack{
+                
+                Pages(currentPage: self.$selected) {
+                     //PageOneSubView()
+                     PageOneSubView()
+                     PageTwoSubView()
+                     PageThreeSubView()
+                    Button(action: {
+                        self.session.signOut()
+                    }){
+                        Text("Quit the app")
+                    }
+                     
+                   Circle() // The 4th page is a Circle
+                }
+            }
+        }
+    }
+}
 
-//struct PageOne: View {
-//    @EnvironmentObject var session: SessionStore
-//
-//    var body: some View{
-//        PageOneSubView()
-//}
-//
-//}
-
-//struct PageTwo: View {
-//    @EnvironmentObject var session: SessionStore
-//    
-//    var body: some View{
-//        
-//}
-//    
-//}
 
 // MARK: - Navigation Bar
 
 struct TopBar: View {
+    
     @EnvironmentObject var session: SessionStore
     @Binding var selected: Int
     @State var imageIcon: UIImage?
+    @Binding var size: CGFloat
     var body: some View{
         
-        VStack(spacing: 20){
+        ZStack{
+        
+        VStack(){
+            
             HStack{
                 
-                NavigationLink(destination: PageThreeSubView()) {
-                    Text("Edit")
+                Button(action: {
+                    self.size = 10
+                    print(self.size)
+                }) {
+                    Image("turtlerock").renderingMode(.original).resizable().scaledToFit().frame(width:50, height: 50).clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
                 }
-                
                 
                 Spacer()
                 
@@ -105,6 +115,7 @@ struct TopBar: View {
                     
                     
                 }
+            
             }
             HStack{
                 Button(action: {
@@ -143,17 +154,83 @@ struct TopBar: View {
                     Text("test5").fontWeight(.semibold).foregroundColor(self.selected == 4 ? .white: Color.white.opacity(0.5))
                 }
                 
-            }.padding(.top)
+            }//.padding(.top)
             
         }.padding().padding(.top, (UIApplication.shared.windows.last?.safeAreaInsets.top)! + 0).background(Color("Color-1"))
+        
+        //.padding(.top, (UIApplication.shared.windows.last?.safeAreaInsets.top)! + 0)
+            
+            
     }
-    
+        
+    }
 }
 
+struct menu : View {
+    
+    @Binding var size : CGFloat
+    @State var editView: Bool = false
+    
+    var body : some View{
+        ZStack{
+        VStack{
+            Spacer()
+            HStack{
+                
+                Spacer()
+                
+                Button(action: {
+                    
+                    self.size =  UIScreen.main.bounds.width / 1.6
+                }) {
+                    
+                    Image(systemName: "arrow.left").resizable().frame(width: 15, height: 15).padding()
+                }.background(Color.red)
+                    .foregroundColor(.white)
+                .clipShape(Circle())
+            }
+            
+            Spacer()
+            HStack{
+                
+                Button(action: {
+                    
+                    withAnimation {
+                        self.editView.toggle()
+                    }
+                    
+                    
+                }){
+                    Image(systemName: "pencil.circle.fill").resizable().frame(width: 25, height: 25).padding()
+                               
+                    Text("Edit").fontWeight(.regular)
+                }
+//                .sheet(isPresented: $editView, content:{
+//                    PageThreeSubView()
+//                })
+                           
+                Spacer()
+            }.padding(.leading, 20)
+            
+            Spacer()
+            
+        }.background(Color.white).frame(width: UIScreen.main.bounds.width / 1.6)
+       // if u want to change swipe menu background color
+          //  }.navigationBar.hidden(true)
+            ZStack{
+                PageThreeSubView()
+            }.background(Color.yellow).edgesIgnoringSafeArea(.all).offset(x:0, y:self.editView ? 0 :UIApplication.shared.keyWindow?.frame.height ?? 0)
+            
+    }
+        
+    }
+}
 
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView{
         HomeView()
+        }
     }
 }

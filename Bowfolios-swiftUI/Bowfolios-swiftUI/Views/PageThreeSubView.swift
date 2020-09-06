@@ -24,6 +24,8 @@ struct PageThreeSubView: View {
     @State var sourceType: UIImagePickerController.SourceType = .camera
     @State var image: UIImage?
     
+   // @Binding var open: Bool
+    
     func editProfile() {
         let db = Firestore.firestore()
         let userid = session.session!.uid
@@ -50,7 +52,7 @@ struct PageThreeSubView: View {
 //            }) {
 //                Text("Upload Image")
 //            }
-            
+            Spacer()
             HStack{
                 Text("Name")
                     .font(.headline).multilineTextAlignment(.leading).padding(.horizontal)
@@ -173,6 +175,7 @@ func uploadImage(image: UIImage, path: String){
 
 struct PageThreeSubView_Previews: PreviewProvider {
     static var previews: some View {
-        PageThreeSubView()
+        //PageThreeSubView(open: $true)
+        Text("no")
     }
 }

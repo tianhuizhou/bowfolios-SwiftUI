@@ -24,6 +24,7 @@ struct ContentView: View {
         print("test1")
     }
     var body: some View {
+        //NavigationView{
         Group{
             //judging the current user State with Firebase Auth
             if session.session != nil {
@@ -31,7 +32,7 @@ struct ContentView: View {
                 //user already logged in
                 //NavigationView{
                     HomeView()
-               // }
+                //}
                 
             }
             else {
@@ -42,7 +43,7 @@ struct ContentView: View {
         }.onAppear(perform: getUser)
         //.onAppear(perform: getSomething)
     }
-    
+   // }
     //    func readData(){
     //        let db = Firestore.firestore()
     //        db.collection("wine").document("tianhui").getDocument {(document, error) in
