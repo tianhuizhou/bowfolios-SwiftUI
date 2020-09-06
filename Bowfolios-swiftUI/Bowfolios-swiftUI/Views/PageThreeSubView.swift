@@ -100,7 +100,13 @@ struct PageThreeSubView: View {
             Button(action: {
                 self.showActionSheet = true
             }) {
-                Text("Show Image picker")
+                if image == nil {
+                    Text("pick a image")
+                }else{
+                    Text("got a image")
+//                    Image(uiImage: image!).resizable().scaledToFit()
+//                        .frame(width:50, height: 50)
+                }
             }.actionSheet(isPresented: $showActionSheet){
                 ActionSheet(title: Text("Add a picture"), message: nil, buttons: [
                 //button 1
@@ -118,7 +124,8 @@ struct PageThreeSubView: View {
                     .cancel()
                 ])
             }.sheet(isPresented: $showImagePicker){
-                imagePicker(image: self.$image, sourceType: self.sourceType)
+                imagePicker(image: self.$image, showImagePicker: self.$showImagePicker, sourceType: self.sourceType)
+                
             }
                 
             
