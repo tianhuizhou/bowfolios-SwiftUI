@@ -29,19 +29,27 @@ struct PageThreeSubView: View {
         let userid = session.session!.uid
         
         db.collection("Profiles").document("\(userid)").setData(["Bio": bio, "Email":session.session!.email, "Interests": [interests], "Name": name, "Projects": [projects], "Title": title])
+        
+        //case 1: users chose a image as their profile photo
+        if let thisImage = self.image {
+            uploadImage(image: thisImage, path: userid)
+        } else {
+            print("could't upload image - no image present!")
+        }
+        
     }
     
     var body: some View {
         VStack{
-            Button(action: {
-                if let thisImage = self.image {
-                    uploadImage(image: thisImage)
-                } else {
-                    print("could't upload image - no image present!")
-                }
-            }) {
-                Text("Upload Image")
-            }
+//            Button(action: {
+//                if let thisImage = self.image {
+//                    uploadImage(image: thisImage)
+//                } else {
+//                    print("could't upload image - no image present!")
+//                }
+//            }) {
+//                Text("Upload Image")
+//            }
             
             HStack{
                 Text("Name")
@@ -141,28 +149,14 @@ struct PageThreeSubView: View {
                 
             }
             
-            
-            
-            //a Button for testing uploading functionality, it should be included in the Edit button.
-//            Button(action: {
-//                if let thisImage = self.image {
-//                    uploadImage(image: thisImage)
-//                } else {
-//                    print("could't upload image - no image present!")
-//                }
-//            }) {
-//                Text("Upload Image")
-//            }
-                
-            
         }
     }
 }
 
-func uploadImage(image: UIImage){
+func uploadImage(image: UIImage, path: String){
     if let imageData = image.jpegData(compressionQuality: 1){
         let storage = Storage.storage()
-        storage.reference().child("temp").putData(imageData, metadata: nil){
+        storage.reference().child(path).putData(imageData, metadata: nil){
             (_, err) in
             if let err = err{
                 print("an error has happened -> \(err.localizedDescription)")
