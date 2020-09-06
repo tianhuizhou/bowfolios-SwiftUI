@@ -199,12 +199,12 @@ struct TopBar: View {
 }
 
 struct menu : View {
-    
+    @EnvironmentObject var session: SessionStore
     @Binding var size : CGFloat
     @State var editView: Bool = false
     
     var body : some View{
-        ZStack{
+       // ZStack{
         VStack{
             Spacer()
             HStack{
@@ -226,12 +226,9 @@ struct menu : View {
             HStack{
                 
                 Button(action: {
-                    
                     withAnimation {
                         self.editView.toggle()
                     }
-                    
-                    
                 }){
                     Image(systemName: "pencil.circle.fill").resizable().frame(width: 25, height: 25).padding()
                                
@@ -245,15 +242,25 @@ struct menu : View {
             }.padding(.leading, 20)
             
             Spacer()
-            
+            HStack{
+                
+                Button(action: {
+                    self.session.signOut()
+                }) {
+                    Image(systemName: "clear.fill").resizable().frame(width: 25, height: 25).padding()
+                    
+                    Text("Quit").fontWeight(.regular)
+                }
+                
+                
+                Spacer()
+            }.padding(.leading, 20)
+            Spacer()
         }.background(Color.white).frame(width: UIScreen.main.bounds.width / 1.6)
        // if u want to change swipe menu background color
-          //  }.navigationBar.hidden(true)
-//            ZStack{
-//                PageThreeSubView()
-//            }.background(Color.yellow).edgesIgnoringSafeArea(.all).offset(x:0, y:self.editView ? 0 :UIApplication.shared.keyWindow?.frame.height ?? 0)
+        
             
-    }
+    //}
         
     }
 }

@@ -65,14 +65,14 @@ class ProfileViewModel: ObservableObject{
                                     if self.interestsAndMembers[num].theInterest == eachIntes {
                                         numJg = 1
                                         //ea.members.append(profile!.Name)
-                                        self.interestsAndMembers[num].members.append(profile!.Name)
+                                        self.interestsAndMembers[num].members.append(profile!.ImagePath ?? "no")
                                         print("only name")
                                     }
                                 }
                             }
                             if numJg == 0 {
                                 print("New interest")
-                                self.interestsAndMembers.append(anInterest(theInterest: eachIntes, members: [profile!.Name]))
+                                self.interestsAndMembers.append(anInterest(theInterest: eachIntes, members: [profile!.ImagePath ?? "no"]))
                             }
                             // }
                             print(self.interestsAndMembers)
