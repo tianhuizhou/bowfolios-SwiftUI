@@ -18,7 +18,7 @@ struct PageOneSubView: View {
     
     var body: some View {
         VStack{
-            ScrollView{
+            List{
                 
                 ForEach(self.profileModel.profiles){profile in
                       

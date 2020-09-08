@@ -62,7 +62,8 @@ struct PagesView: View {
                      //PageOneSubView()
                      PageOneSubView()
                      PageTwoSubView()
-                     PageThreeSubView()
+                     Text("page2")
+                     //PageThreeSubView()
                     Button(action: {
                         self.session.signOut()
                     }){
@@ -198,6 +199,8 @@ struct TopBar: View {
     }
 }
 
+//MARK: - Menu
+
 struct menu : View {
     @EnvironmentObject var session: SessionStore
     @Binding var size : CGFloat
@@ -235,7 +238,7 @@ struct menu : View {
                     Text("Edit").fontWeight(.regular)
                 }
                 .sheet(isPresented: $editView, content:{
-                    PageThreeSubView()
+                    PageThreeSubView(editView: self.$editView).environmentObject(self.session)
                 })
                            
                 Spacer()

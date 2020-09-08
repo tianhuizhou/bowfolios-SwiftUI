@@ -12,6 +12,8 @@ import Firebase
 
 struct PageThreeSubView: View {
     
+    @Binding var editView: Bool
+    
     @EnvironmentObject var session: SessionStore
     @State private var name = ""
     @State private var title = ""
@@ -28,20 +30,19 @@ struct PageThreeSubView: View {
     
     func editProfile() {
         let db = Firestore.firestore()
-        print("\(session.session?.uid ?? "cannot get it")")
-//        let userid = session.session?.uid
-//        if userid != nil {
-//        db.collection("Profiles").document("\(userid!)").setData(["Bio": bio, "Email":session.session!.email, "ImagePath": userid!, "Interests": [interests], "Name": name, "Projects": [projects], "Title": title])
-//
-//        //case 1: users chose a image as their profile photo
-//        if let thisImage = self.image {
-//            uploadImage(image: thisImage, path: userid!)
-//        } else {
-//            print("could't upload image - no image present!")
-//        }
-//        } else{
-//            print("cannot get user id")
-//        }
+        let userid : String = (Auth.auth().currentUser?.uid)!
+        print("Current user ID is " + userid)
+        //print("\(session.session?.uid ?? "cannot get it")")
+        
+        db.collection("Profiles").document("\(userid)").setData(["Bio": bio, "Email":session.session!.email, "ImagePath": userid, "Interests": [interests], "Name": name, "Projects": [projects], "Title": title])
+
+        //case 1: users chose a image as their profile photo
+        if let thisImage = self.image {
+            uploadImage(image: thisImage, path: userid)
+        } else {
+            print("could't upload image - no image present!")
+        }
+        
     }
     
     var body: some View {
@@ -102,7 +103,10 @@ struct PageThreeSubView: View {
             
             Spacer()
             
-            Button(action: editProfile){
+            Button(action: {
+                self.editProfile()
+                self.editView = false
+            }){
                 Text("Edit")
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .frame(height: 50)
