@@ -41,92 +41,11 @@ struct ContentView: View {
                 
             }
         }.onAppear(perform: getUser)
-        //.onAppear(perform: getSomething)
+      
     }
-   // }
-    //    func readData(){
-    //        let db = Firestore.firestore()
-    //        db.collection("wine").document("tianhui").getDocument {(document, error) in
-    //
-    //            if error == nil {
-    //
-    //                if document != nil && document!.exists {
-    //
-    //                    let documentData = document!.data()
-    //
-    //                    self.infoOne = (documentData?["day"] as? String)!
-    //                    self.infoTwo = (documentData?["month"] as? String)!
-    //                }
-    //            }
-    //        }
-    //    }
+
 }
 
-//struct HomeView: View {
-//    //@EnvironmentObject var session: SessionStore
-//
-//    var body: some View {
-//        NavigationView{
-//            SecondView()
-//        }
-//    }
-//}
-
-struct SecondView: View {
-    
-    @State var infoOne: String = ""
-    @State var infoTwo: String = ""
-    @EnvironmentObject var session: SessionStore
-    
-    func test(){
-        print("second should be same as: \(self.infoOne)")
-    }
-    
-    func readData(){
-        let userId = session.session?.uid
-        print("test in readData function: \(userId ?? "fail")")
-        let db = Firestore.firestore()
-        db.collection("wine").document("\(userId ?? "tianhui")").getDocument {(document, error) in
-            
-            if error == nil {
-                
-                if document != nil && document!.exists {
-                    
-                    let documentData = document!.data()
-                    
-                    self.infoOne = (documentData?["day"] as? String)!
-                    print("first test: \(self.infoOne)!!!")
-                    self.infoTwo = (documentData?["month"] as? String)!
-                    
-                }
-            }
-        }
-        
-        
-        
-        
-    }
-    
-    
-    var body: some View {
-        VStack{
-            
-            Text(infoOne)
-            Text(infoTwo)
-            Text("Here is Home view!")
-            Button(action: session.signOut){
-                Text("Quit")
-                
-            }.padding()
-            
-            NavigationLink(destination: AddInfo()){
-                Text("gogogo")
-            }
-            
-            
-        }.onAppear(perform: readData)
-    }
-}
 
 struct AddInfo: View {
     @State var day: String = ""

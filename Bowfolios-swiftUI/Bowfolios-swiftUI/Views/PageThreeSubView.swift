@@ -28,30 +28,25 @@ struct PageThreeSubView: View {
     
     func editProfile() {
         let db = Firestore.firestore()
-        let userid = session.session!.uid
-        
-        db.collection("Profiles").document("\(userid)").setData(["Bio": bio, "Email":session.session!.email, "ImagePath": userid, "Interests": [interests], "Name": name, "Projects": [projects], "Title": title])
-        
-        //case 1: users chose a image as their profile photo
-        if let thisImage = self.image {
-            uploadImage(image: thisImage, path: userid)
-        } else {
-            print("could't upload image - no image present!")
-        }
-        
+        print("\(session.session?.uid ?? "cannot get it")")
+//        let userid = session.session?.uid
+//        if userid != nil {
+//        db.collection("Profiles").document("\(userid!)").setData(["Bio": bio, "Email":session.session!.email, "ImagePath": userid!, "Interests": [interests], "Name": name, "Projects": [projects], "Title": title])
+//
+//        //case 1: users chose a image as their profile photo
+//        if let thisImage = self.image {
+//            uploadImage(image: thisImage, path: userid!)
+//        } else {
+//            print("could't upload image - no image present!")
+//        }
+//        } else{
+//            print("cannot get user id")
+//        }
     }
     
     var body: some View {
         VStack{
-//            Button(action: {
-//                if let thisImage = self.image {
-//                    uploadImage(image: thisImage)
-//                } else {
-//                    print("could't upload image - no image present!")
-//                }
-//            }) {
-//                Text("Upload Image")
-//            }
+
             Spacer()
             HStack{
                 Text("Name")

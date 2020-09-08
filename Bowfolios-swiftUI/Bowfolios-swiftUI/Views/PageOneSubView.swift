@@ -18,7 +18,7 @@ struct PageOneSubView: View {
     
     var body: some View {
         VStack{
-            List{
+            ScrollView{
                 
                 ForEach(self.profileModel.profiles){profile in
                       
@@ -47,7 +47,7 @@ struct ProfileRowView: View {
     func getPhoto(){
         
         if imagePath != nil {
-            Storage.storage().reference().child(imagePath!).getData(maxSize: 5 * 1024 * 1024) { (imageData, err) in
+            Storage.storage().reference().child(imagePath!).getData(maxSize: 1 * 1024 * 1024) { (imageData, err) in
                 if let err = err {
                     print("an error has happened - \(err.localizedDescription)")
                 } else {
@@ -139,7 +139,6 @@ struct ProfileRowView: View {
 
 struct PageOneSubView_Previews: PreviewProvider {
     static var previews: some View {
-        Text("hi")
-        //PageOneSubView()
+        PageOneSubView()
     }
 }

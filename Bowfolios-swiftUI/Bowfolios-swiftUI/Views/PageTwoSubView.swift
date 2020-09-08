@@ -39,7 +39,7 @@ struct PageTwoSubView: View {
     
     var body: some View {
         VStack{
-                    List{
+                    ScrollView{
                         
                         ForEach(self.profileViewModel.interestsAndMembers, id: \.self) { inteSec in
                             InterestsGroupView(member: inteSec.members, title: inteSec.theInterest)
